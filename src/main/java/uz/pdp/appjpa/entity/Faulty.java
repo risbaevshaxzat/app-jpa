@@ -1,2 +1,22 @@
-package uz.pdp.appjpa.entity;public class Faulty {
+package uz.pdp.appjpa.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Faulty {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Integer id;
+
+    private String  name;
+
+    @ManyToOne
+    private University university;
 }
