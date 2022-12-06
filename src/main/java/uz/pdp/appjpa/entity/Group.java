@@ -21,7 +21,7 @@ public class Group {
     private String name;
 
     @ManyToOne
-    private Faulty faulty;
+    private Faculty faculty;
 
     @OneToMany
     private List<Student> students;

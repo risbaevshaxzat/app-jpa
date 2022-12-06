@@ -9,6 +9,7 @@ import uz.pdp.appjpa.entity.University;
 import uz.pdp.appjpa.payload.UniversityDto;
 import uz.pdp.appjpa.repository.AddressRepositry;
 import uz.pdp.appjpa.repository.UniversityRepositpory;
+import uz.pdp.appjpa.servis.UniversityService;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,8 @@ public class UniversittyController {
 
     @Autowired
     AddressRepositry addressRepositry;
+    @Autowired
+    UniversityService universityService;
 
     @GetMapping("/university")
     public List<University> getUniversity(){
@@ -68,7 +71,7 @@ public class UniversittyController {
 
     @DeleteMapping("/university/{id}")
     public ResponseEntity<?> deleteUniversity(@PathVariable Integer id){
-        universityRepositpory.deleteById(id);
+        universityService.deletAL(id);
         return ResponseEntity.ok("\"Delete University\";");
     }
 }
